@@ -43,12 +43,18 @@ namespace snake
                     x = x - offset;
                     break;
                 case Direction.UP:
-                    x = y- offset;
-                    break;
-                case Direction.DOWN:
                     x = y + offset;
                     break;
+                case Direction.DOWN:
+                    x = y - offset;
+                    break;
             }
+        }
+
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
         }
     }
 }
