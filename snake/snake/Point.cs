@@ -43,10 +43,10 @@ namespace snake
                     x = x - offset;
                     break;
                 case Direction.UP:
-                    x = y + offset;
+                    y = y - offset;
                     break;
                 case Direction.DOWN:
-                    x = y - offset;
+                    y = y + offset;
                     break;
             }
         }
