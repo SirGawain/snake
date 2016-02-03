@@ -10,10 +10,19 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            Point a = new Point(3, 4, '*');
-            a.Draw();
-            HorizontalLine line = new HorizontalLine(5,10,8,'+');
-            line.Draw();
+            Console.SetBufferSize(80,25); //установить размер окна и убрать возможность перемотки
+
+            //Отрисовка рамки
+            HorizontalLine upLine = new HorizontalLine(0,78,0,'+');
+            HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
+            VerticalLine leftLine = new VerticalLine(0,24,0,'+');
+            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
+            upLine.Draw();
+            downLine.Draw();
+            leftLine.Draw();
+            rightLine.Draw();
+
+
             Console.ReadKey();
         }
     }
