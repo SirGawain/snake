@@ -10,8 +10,9 @@ namespace snake
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Helloy world");
-            Console.ReadLine();
+            Point a = new Point(3, 4, '*');
+            a.Draw();
+            Console.ReadKey();
         }
     }
 }
