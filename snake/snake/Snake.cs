@@ -57,6 +57,7 @@ namespace snake
                     break;
             }
         }
+
         public bool Eat (Point food)
         {
             Point head = GetNextPoint();
@@ -68,6 +69,16 @@ namespace snake
             }
             else
                 return false;
+        }
+       public bool IsHitTail()
+        {
+            var head = mas.Last();
+            for(int i=0; i<mas.Count-2; i++)
+            {
+                if (head.IsHit(mas[i]))
+                    return true;
+            }
+            return false;
         }
     }
 }
