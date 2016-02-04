@@ -57,5 +57,17 @@ namespace snake
                     break;
             }
         }
+        public bool Eat (Point food)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(food))
+            {
+                food.sym = head.sym;
+                mas.Add(food);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

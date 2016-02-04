@@ -34,13 +34,23 @@ namespace snake
 
             while(true)
             {
-                if(Console.KeyAvailable) //нажата ли какая-либо клавиша
+                if(snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(100);
+
+                if (Console.KeyAvailable) //нажата ли какая-либо клавиша
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);
                 }
-                Thread.Sleep(100);
-                snake.Move();
             }
 
             Console.ReadKey();
